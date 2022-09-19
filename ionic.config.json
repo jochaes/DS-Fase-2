@@ -1,0 +1,7 @@
+{
+  "name": "app-fase-2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
