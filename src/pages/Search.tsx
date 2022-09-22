@@ -1,11 +1,10 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
+
 import ExploreContainer from '../components/ExploreContainer';
-import './Page.css';
+import './Search.css';
 
-const Page: React.FC = () => {
-
-  const { name } = useParams<{ name: string; }>();
+const Search: React.FC = () => {
 
   return (
     <IonPage>
@@ -17,7 +16,7 @@ const Page: React.FC = () => {
             <IonMenuButton />
           </IonButtons>
 
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>Search</IonTitle>
 
         </IonToolbar>
 
@@ -26,14 +25,19 @@ const Page: React.FC = () => {
       <IonContent fullscreen>
         
         <IonHeader collapse="condense">
+
           <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
+            <IonTitle size="large">Search</IonTitle>
           </IonToolbar>
+
         </IonHeader>
-        <ExploreContainer name={name} />
+
+        
+
+
       </IonContent>
     </IonPage>
   );
 };
 
-export default Page;
+export default Search;
