@@ -1,8 +1,8 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
 
-import ExploreContainer from '../components/ExploreContainer';
-import './Search.css';
+
+import '../styles/pages/Search.css';
 
 const Search: React.FC = () => {
 
@@ -32,7 +32,7 @@ const Search: React.FC = () => {
 
         </IonHeader>
 
-        
+
 
 
       </IonContent>
