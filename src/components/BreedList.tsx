@@ -41,7 +41,7 @@ interface Breed{
 }
 
 interface BreedListProps{
-  breedArray: string[]
+  breedArray: JSX.Element[]
 }
 
 

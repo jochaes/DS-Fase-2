@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import axios from "axios"
 
 
-import { IonSearchbar, IonContent, IonSlide, IonImg } from '@ionic/react';
+import { IonSearchbar, IonContent, IonSlide, IonImg, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonRow, IonTitle } from '@ionic/react';
 import { trashBin } from 'ionicons/icons';
 import internal from "stream";
 
@@ -41,9 +41,11 @@ interface Breed{
   image : Image
 }
 
+interface BreedInfoProps{
+  breedInfo: Breed;
+}
 
-
-const BreedInfo: React.FC<Breed> = ( breedInfo:Breed) => {
+const BreedInfo: React.FC<BreedInfoProps> = ({breedInfo}) => {
 
   const [breedImages, setBreedImages] = useState<Image[] | []>([])
 	const dog_api_key:string = "82025e77-9873-469d-a255-4946ec6b9a86"
@@ -100,20 +102,54 @@ const BreedInfo: React.FC<Breed> = ( breedInfo:Breed) => {
     console.log("Building cards for" + card_code)
     
     if (string == "" || string == null){
-      return 
+      return (
+        <IonCol>
+          <IonCard key="noData-1">
+            <IonCardHeader> 
+              <IonCardSubtitle>
+                0
+              </IonCardSubtitle>
+              <IonCardTitle>
+                No hay Datos
+              </IonCardTitle>
+            </IonCardHeader>
+          </IonCard>
+        </IonCol>
+      )
+    }else{
+      const card_info_list:string[] = string.split(",")
 
+      const cards = card_info_list.map((card, index) => (
+        <IonCol>
+          <IonCard key={card_code + index}>
+            <IonCardSubtitle>
+              {index + 1}
+            </IonCardSubtitle>
+            <IonCardTitle>
+              {card}
+            </IonCardTitle>
+          </IonCard>
+        </IonCol>)
+        )
+      return cards
     }
-    
-
-
   }
 
 
-
+  //todo terminar de rotornar toda la informacion de la raza
   return(
-    <h1>Hello Breed Info</h1>
+    <IonContent>
+      <IonRow>
+        <IonCol>
+          <IonCard key="123">
+            <IonTitle>
+              {breedInfo.name}
+            </IonTitle>
+          </IonCard>
+        </IonCol>
+      </IonRow>
+    </IonContent> 
   )
-
 
 }
 

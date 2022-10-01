@@ -1,6 +1,6 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
-
+import BreedSearch from '../components/BreedSearch';
 
 import '../styles/pages/Search.css';
 
@@ -31,6 +31,8 @@ const Search: React.FC = () => {
           </IonToolbar>
 
         </IonHeader>
+
+        <BreedSearch />
 
 
 
