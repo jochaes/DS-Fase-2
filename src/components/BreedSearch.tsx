@@ -78,7 +78,7 @@ const BreedSearch: React.FC = () => {
 	const showButton = (event: Event) => {
 		let text = ""
 		const target = event.target as HTMLIonSearchbarElement
-		if (target) text = target.value!.toLowerCase()
+		if (target) text = target.value!
 
 		setSearchFilter(text) // Actualiza la barra de búsqueda
 	}
@@ -110,7 +110,7 @@ const BreedSearch: React.FC = () => {
 
 		let text = ""
 		const target = event.target as HTMLIonSearchbarElement
-		if (target) text = target.value!.toLowerCase()
+		if (target) text = target.value!
 		setSearchFilter(text)
 	}
 
