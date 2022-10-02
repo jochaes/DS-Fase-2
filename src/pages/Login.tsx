@@ -1,6 +1,7 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
 import LoginButton from '../components/LoginButton';
+import LogoutButton from '../components/LogOutButton';
 
 import '../styles/pages/Login.css';
 
@@ -34,6 +35,7 @@ const Login: React.FC = () => {
         </IonHeader>
 
         <LoginButton />
+        <LogoutButton />
         
 
 
