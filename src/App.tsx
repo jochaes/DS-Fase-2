@@ -55,7 +55,6 @@ const App: React.FC = () => {
               <Search />
             </Route>
 
-          
           </IonRouterOutlet>
 
         </IonSplitPane>

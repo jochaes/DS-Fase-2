@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import axios from "axios"
 
 
-import { IonSearchbar, IonContent, IonSlide, IonImg, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonRow, IonTitle } from '@ionic/react';
+import { IonSearchbar, IonContent, IonSlide, IonImg, IonCol, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonRow, IonTitle, IonItem } from '@ionic/react';
 import { trashBin } from 'ionicons/icons';
 import internal from "stream";
 
@@ -138,17 +138,21 @@ const BreedInfo: React.FC<BreedInfoProps> = ({breedInfo}) => {
 
   //todo terminar de rotornar toda la informacion de la raza
   return(
-    <IonContent>
-      <IonRow>
-        <IonCol>
-          <IonCard key="123">
-            <IonTitle>
-              {breedInfo.name}
-            </IonTitle>
-          </IonCard>
-        </IonCol>
-      </IonRow>
-    </IonContent> 
+
+    <IonItem>
+      {breedInfo.name}
+    </IonItem>
+    // <IonContent>
+    //   <IonRow>
+    //     <IonCol>
+    //       <IonCard key="123">
+    //         <IonTitle>
+    //           {breedInfo.name}
+    //         </IonTitle>
+    //       </IonCard>
+    //     </IonCol>
+    //   </IonRow>
+    // </IonContent> 
   )
 
 }

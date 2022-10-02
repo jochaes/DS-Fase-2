@@ -3,7 +3,7 @@ import axios from "axios"
 import BreedInfo from "./BreedInfo"
 import BreedDisplay from "./BreedDisplay"
 import BreedList from "./BreedList"
-import { IonContent, IonGrid, IonInput, IonRow } from "@ionic/react"
+import { IonCol, IonContent, IonGrid, IonInput, IonRow } from "@ionic/react"
 import { IonInputCustomEvent } from "@ionic/core"
 import SearchFilter from "./SearchFilter"
 
@@ -100,7 +100,7 @@ const BreedSearch: React.FC = () => {
 					<BreedDisplay key={breed.id} breed={breed} onClickhandler={showButton} />
 				))
 
-				return <BreedList breedArray={breedArrayFinal} />
+				return breedArrayFinal
 			}
 		}
 	}
@@ -115,19 +115,23 @@ const BreedSearch: React.FC = () => {
 	}
 
 	return (
-		<IonContent>
-			<IonGrid>
-				<IonRow>
+		<>
+			<IonRow>
+				<IonCol size="12">
 					<SearchFilter value={searchFilter} onChange={handleSearchFilterChange} />
-				</IonRow>
-        <IonRow>
-          hola mi gente 
-        </IonRow>
-				<IonRow id="omg">
-          {showBreedImages()}
-        </IonRow>
-			</IonGrid>
-		</IonContent>
+				</IonCol>
+			</IonRow>
+
+			<IonRow>
+
+				<IonCol size="12">
+					{showBreedImages()}
+				</IonCol>
+
+			</IonRow>
+		</>
+
+
 	)
 }
 
