@@ -1,5 +1,6 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
+import ProfileComponent from '../components/ProfileComponent';
 
 
 import '../styles/pages/Profile.css';
@@ -32,8 +33,7 @@ const Profile: React.FC = () => {
 
         </IonHeader>
 
-        
-
+        <ProfileComponent />
 
       </IonContent>
     </IonPage>
