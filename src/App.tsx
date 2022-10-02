@@ -2,7 +2,6 @@ import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/r
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
-import Page from './pages/Page';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -27,9 +26,35 @@ import Search from './pages/Search';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 
+
+/* Imports para el login */
+import {App as CapApp} from '@capacitor/app'
+import { Browser } from '@capacitor/browser';
+import { useAuth0 } from '@auth0/auth0-react';
+import React, { useEffect } from "react"
+
+import LoginButton from './components/LoginButton';
+
+
+
 setupIonicReact();
 
 const App: React.FC = () => {
+  const { handleRedirectCallback } = useAuth0();
+
+  useEffect(() => {
+    console.log("Hola");
+    
+    // Handle the 'appUrlOpen' event and call `handleRedirectCallback`
+    CapApp.addListener('appUrlOpen', async ({ url }) => {
+      if (url.includes('state') && (url.includes('code') || url.includes('error'))) {
+        await handleRedirectCallback(url);
+      }
+      // No-op on Android
+      await Browser.close();
+    });
+  }, [handleRedirectCallback]); 
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -56,6 +81,8 @@ const App: React.FC = () => {
             </Route>
 
           </IonRouterOutlet>
+
+          
 
         </IonSplitPane>
         
