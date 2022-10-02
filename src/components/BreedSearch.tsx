@@ -135,4 +135,4 @@ const BreedSearch: React.FC = () => {
 	)
 }
 
-export default BreedSearch
+export default BreedSearch;
