@@ -1,6 +1,6 @@
 import React from "react"
-import { IonCard, IonCardSubtitle, IonCardTitle, IonItem } from "@ionic/react"
-
+import { IonCard, IonCardSubtitle, IonCardTitle, IonItem, IonImg, IonThumbnail, IonCardHeader, IonCardContent, IonIcon } from '@ionic/react';
+import {pin, pawOutline, pawSharp} from 'ionicons/icons'
 /**
  * Input de busqueda de la pagina de busqueda
  */
@@ -41,11 +41,25 @@ interface BreedDisplayProps {
 }
 
 const BreedDisplay: React.FC<BreedDisplayProps> = ({ breed, onClickhandler }) => {
+	console.log(breed.image.url);
+	
 	return (
 		<IonItem>
-			<IonCard onClick={e => onClickhandler(e)}>
-				<IonCardSubtitle>Id: {breed.id}</IonCardSubtitle>
-				<IonCardTitle>{breed.name}</IonCardTitle>
+			<IonCard onClick={e => onClickhandler(e)} class="ios hydrated">
+				<IonItem>
+					<IonIcon ios={pawOutline} md={pawSharp} />
+					<IonCardSubtitle slot="end" >Id: {breed.id}</IonCardSubtitle>
+				</IonItem>
+				<IonCardHeader>
+					<IonCardTitle role="heading">{breed.name}</IonCardTitle>
+				</IonCardHeader>
+				<IonCardContent>
+					<img src={breed.image.url} alt="Breed Image" />					
+				</IonCardContent>
+
+				
+				
+				
 			</IonCard>
 		</IonItem>
 	)
