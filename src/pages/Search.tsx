@@ -9,7 +9,6 @@ import {
 	IonTitle,
 	IonToolbar,
 	IonCol,
-	IonItem,
 } from "@ionic/react";
 
 import BreedSearch from "../components/BreedSearch";

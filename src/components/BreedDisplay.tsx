@@ -41,7 +41,6 @@ interface BreedDisplayProps {
 }
 
 const BreedDisplay: React.FC<BreedDisplayProps> = ({ breed, onClickhandler }) => {
-	console.log(breed.image.url);
 	
 	return (
 		<IonItem>

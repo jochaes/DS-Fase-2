@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import BreedInfo from "./BreedInfo"
 import BreedDisplay from "./BreedDisplay"
-import BreedList from "./BreedList"
-import { IonCol, IonContent, IonGrid, IonInput, IonRow } from "@ionic/react"
+import { IonCol, IonRow } from "@ionic/react"
 import { IonInputCustomEvent } from "@ionic/core"
 import SearchFilter from "./SearchFilter"
 
@@ -109,8 +108,6 @@ const BreedSearch: React.FC = () => {
 	}
 
 	const handleSearchFilterChange = (event: Event) => {
-		console.log("holas")
-
 		let text = ""
 		const target = event.target as HTMLIonSearchbarElement
 		if (target) text = target.value!
