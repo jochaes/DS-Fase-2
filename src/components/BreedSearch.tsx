@@ -78,8 +78,11 @@ const BreedSearch: React.FC = () => {
 	const showButton = (event: Event) => {
 		let text = ""
 		const target = event.target as HTMLIonSearchbarElement
-		if (target) text = target.value!
-
+		
+		if (target) text = target.parentElement?.getElementsByTagName('ion-card-title')[0].innerHTML!
+		console.log( "el contenido es: " + text)
+		
+		
 		setSearchFilter(text) // Actualiza la barra de búsqueda
 	}
 

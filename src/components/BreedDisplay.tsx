@@ -45,7 +45,7 @@ const BreedDisplay: React.FC<BreedDisplayProps> = ({ breed, onClickhandler }) =>
 		<IonItem>
 			<IonCard onClick={e => onClickhandler(e)}>
 				<IonCardSubtitle>Id: {breed.id}</IonCardSubtitle>
-				<IonCardTitle>Name: {breed.name}</IonCardTitle>
+				<IonCardTitle>{breed.name}</IonCardTitle>
 			</IonCard>
 		</IonItem>
 	)
