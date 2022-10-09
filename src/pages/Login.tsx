@@ -13,10 +13,6 @@ const Login: React.FC = () => {
 
         <IonToolbar>
 
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-
           <IonTitle>Login</IonTitle>
 
         </IonToolbar>
@@ -35,8 +31,6 @@ const Login: React.FC = () => {
         </IonHeader>
 
         <LoginButton />
-        <LogoutButton />
-        
 
 
       </IonContent>

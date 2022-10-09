@@ -1,5 +1,6 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
+import LogoutButton from '../components/LogOutButton';
 import ProfileComponent from '../components/ProfileComponent';
 
 
@@ -34,6 +35,7 @@ const Profile: React.FC = () => {
         </IonHeader>
 
         <ProfileComponent />
+        <LogoutButton />
 
       </IonContent>
     </IonPage>
