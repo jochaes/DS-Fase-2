@@ -11,9 +11,11 @@ const Login: React.FC = () => {
     <IonPage>
       <IonHeader>
 
+        <IonToolbar>
 
           <IonTitle>Login</IonTitle>
 
+        </IonToolbar>
 
       </IonHeader>
 
