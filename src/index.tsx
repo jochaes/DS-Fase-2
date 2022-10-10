@@ -9,8 +9,7 @@ root.render(
 	<Auth0Provider
     domain="dev-6ubin6a9.us.auth0.com"
     clientId="jbtCT5tAd5lu4FZtkxHmBuib5wALLRp5"
-    // redirectUri="io.ionic.starter://dev-6ubin6a9.us.auth0.com/capacitor/io.ionic.starter/callback">
-    redirectUri="io.ionic.starter://dev-6ubin6a9.us.auth0.com/capacitor/io.ionic.starter/page/Search">
+    redirectUri="io.ionic.starter://dev-6ubin6a9.us.auth0.com/capacitor/io.ionic.starter/callback">
 
 		<React.StrictMode>
 			<App />

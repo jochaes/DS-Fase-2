@@ -6,8 +6,8 @@ import { IonButton } from '@ionic/react';
 
 // This should reflect the URL added earlier to your "Allowed Logout URLs" setting
 // in the Auth0 dashboard.
-// const logoutUri = 'io.ionic.starter://dev-6ubin6a9.us.auth0.com/capacitor/io.ionic.starter/callback';
-const logoutUri = 'io.ionic.starter://dev-6ubin6a9.us.auth0.com/capacitor/io.ionic.starter/page/Login';
+const logoutUri = 'io.ionic.starter://dev-6ubin6a9.us.auth0.com/capacitor/io.ionic.starter/callback';
+
 
 const LogoutButton: React.FC = () => {
   const { buildLogoutUrl, logout } = useAuth0();
