@@ -23,35 +23,32 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Profile',
+    title: 'Perfil',
     url: '/page/Profile',
     iosIcon: personOutline,
     mdIcon: personSharp
   },
   {
-    title: 'Search',
+    title: 'Búsqueda',
     url: '/page/Search',
     iosIcon: searchOutline,
     mdIcon: searchSharp
-  },
-  {
-    title: 'LogIn',
-    url: '/page/Login',
-    iosIcon: logInOutline,
-    mdIcon: logInSharp
   }
 ];
 
+interface props{
+  swipeEnable: boolean
+}
 
-const Menu: React.FC = () => {
+const Menu: React.FC<props> = ({swipeEnable}) => {
   const location = useLocation();
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu contentId="main" type="overlay" swipeGesture={swipeEnable}>
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>Menú</IonListHeader>
+          <IonNote>Dog API App</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>

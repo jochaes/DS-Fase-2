@@ -167,7 +167,7 @@ const BreedInfo: React.FC<BreedInfoProps> = ({ breedInfo }) => {
 				</IonRow>
 
 				<IonRow>
-					<IonCol size="6">
+					<IonCol>
 						<IonCard key="peso_card">
 							<IonCardHeader>
 								<IonCardTitle>Peso</IonCardTitle>
@@ -177,8 +177,10 @@ const BreedInfo: React.FC<BreedInfoProps> = ({ breedInfo }) => {
 							</IonCardHeader>
 						</IonCard>
 					</IonCol>
+				</IonRow>
 
-					<IonCol size="6">
+				<IonRow>
+					<IonCol>
 						<IonCard key="altura_card">
 							<IonCardHeader>
 								<IonCardTitle>Altura</IonCardTitle>
@@ -207,7 +209,7 @@ const BreedInfo: React.FC<BreedInfoProps> = ({ breedInfo }) => {
 					</IonCol>
 				</IonRow>
 				<IonRow>
-					<IonCol size="6">
+					<IonCol size="12">
 						<IonCard key="grupo_card">
 							<IonCardHeader>
 								<IonCardTitle>Grupo de Raza</IonCardTitle>
@@ -215,8 +217,9 @@ const BreedInfo: React.FC<BreedInfoProps> = ({ breedInfo }) => {
 							</IonCardHeader>
 						</IonCard>
 					</IonCol>
-
-					<IonCol size="6">
+				</IonRow>
+				<IonRow>
+					<IonCol size="12">
 						<IonCard key="vida_card">
 							<IonCardHeader>
 								<IonCardTitle>Esperanza de Vida</IonCardTitle>

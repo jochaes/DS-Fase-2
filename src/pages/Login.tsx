@@ -1,41 +1,65 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { useParams } from 'react-router';
-import LoginButton from '../components/LoginButton';
-import LogoutButton from '../components/LogOutButton';
+import {
+	IonCol,
+	IonContent,
+	IonGrid,
+	IonHeader,
+	IonItem,
+	IonLabel,
+	IonPage,
+	IonRow,
+	IonTitle,
+	IonToolbar,
+} from "@ionic/react"
 
-import '../styles/pages/Login.css';
+import LoginButton from "../components/LoginButton"
+import { useHistory } from "react-router"
+
+import "../styles/pages/Login.css"
+import { useAuth0 } from "@auth0/auth0-react"
 
 const Login: React.FC = () => {
+	const history = useHistory()
 
-  return (
-    <IonPage>
-      <IonHeader>
+	const { user } = useAuth0()
+	if (user) {
+		history.replace("/page/Search")
+	}
 
-        <IonToolbar>
+	return (
+		<IonPage>
+			<IonContent scrollEvents={false} fullscreen>
+				<IonGrid>
+					<IonRow className="ion-align-items-center ion-justify-content-center">
+            <IonCol className="ion-margin-top">
+						<IonHeader collapse="condense">
+							<IonToolbar>
+								<IonTitle size="large">Dog API App</IonTitle>
+							</IonToolbar>
+						</IonHeader>
+            </IonCol>
+					</IonRow>
 
-          <IonTitle>Login</IonTitle>
+					<IonRow className="ion-align-items-center ion-justify-content-center">
+						<IonCol>
+							<IonItem>
+								<IonLabel>
+									<p>Iniciar sesión para usar la App</p>
+								</IonLabel>
+							</IonItem>
+						</IonCol>
+					</IonRow>
 
-        </IonToolbar>
+          <IonRow className="ion-align-items-center ion-justify-content-center">
+            <IonCol>
+            <LoginButton />
+            </IonCol>
+          </IonRow>
+				</IonGrid>
 
-      </IonHeader>
+			
+			</IonContent>
+		</IonPage>
+	)
+}
 
-      <IonContent fullscreen>
-        
-        <IonHeader collapse="condense">
-
-          <IonToolbar>
-            <IonTitle size="large">Login</IonTitle>
-          </IonToolbar>
-          
-
-        </IonHeader>
-
-        <LoginButton />
-
-
-      </IonContent>
-    </IonPage>
-  );
-};
-
-export default Login;
+export default Login
